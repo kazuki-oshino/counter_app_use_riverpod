@@ -2,7 +2,7 @@ import 'package:counter_app_use_riverpod/view_models/states/counter_state.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final counterProvider =
-    StateNotifierProvider((ref) => CounterController(ref.read));
+    StateNotifierProvider.autoDispose((ref) => CounterController(ref.read));
 
 class CounterController extends StateNotifier<CounterState> {
   CounterController(this._reader)
