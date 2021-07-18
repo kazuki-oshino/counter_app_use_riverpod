@@ -1,13 +1,13 @@
 import 'package:counter_app_use_riverpod/view_models/states/counter_state.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final counterProvider =
-    StateNotifierProvider.autoDispose((ref) => CounterController(ref.read));
+final counterProvider = StateNotifierProvider<CounterController, CounterState>(
+    (ref) => CounterController(ref.read));
 
 class CounterController extends StateNotifier<CounterState> {
   CounterController(this._reader)
       : super(CounterState(
-          // Stateの初期値が決まっている場合、コンストラクタで設定できる
+          // Stateを初期化する。counterは必須にしているため、初期値設定しないとエラー
           counter: 0,
         )) {
     // DBからのデータ初期取得処理などあれば、取得処理を書く

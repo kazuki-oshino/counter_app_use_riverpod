@@ -4,13 +4,16 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class MyHomePage extends HookWidget {
-
   final String title;
-  MyHomePage({this.title});
+
+  MyHomePage({required this.title});
 
   @override
   Widget build(BuildContext context) {
-    final _counter = useProvider(counterProvider.state).counter;
+    // counterProviderの状態
+    final counter = useProvider(counterProvider).counter;
+    // CounterControllerを使用するために読み取り
+    final notifier = useProvider(counterProvider.notifier);
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -23,18 +26,18 @@ class MyHomePage extends HookWidget {
               'You have pushed the button this many times:',
             ),
             Text(
-              '$_counter',
+              '$counter',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        // Controllerに置いてある処理を呼ぶ
-        onPressed: () => context.read(counterProvider).increment(),
+        // CounterControllerに置いてある処理を呼ぶ
+        onPressed: () => notifier.increment(),
         tooltip: 'Increment',
         child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }

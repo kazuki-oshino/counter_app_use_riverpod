@@ -1,11 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'counter_state.freezed.dart';
 
 @freezed
-abstract class CounterState with _$CounterState {
+class CounterState with _$CounterState {
+  const CounterState._();
   const factory CounterState({
-    int counter,
+    required int counter,
   }) = _CounterState;
-
 }

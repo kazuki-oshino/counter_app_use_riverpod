@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'counter_state.dart';
 
@@ -9,12 +9,14 @@ part of 'counter_state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$CounterStateTearOff {
   const _$CounterStateTearOff();
 
-// ignore: unused_element
-  _CounterState call({int counter}) {
+  _CounterState call({required int counter}) {
     return _CounterState(
       counter: counter,
     );
@@ -22,15 +24,15 @@ class _$CounterStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CounterState = _$CounterStateTearOff();
 
 /// @nodoc
 mixin _$CounterState {
-  int get counter;
+  int get counter => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CounterStateCopyWith<CounterState> get copyWith;
+  $CounterStateCopyWith<CounterState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -51,10 +53,13 @@ class _$CounterStateCopyWithImpl<$Res> implements $CounterStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object counter = freezed,
+    Object? counter = freezed,
   }) {
     return _then(_value.copyWith(
-      counter: counter == freezed ? _value.counter : counter as int,
+      counter: counter == freezed
+          ? _value.counter
+          : counter // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -81,17 +86,21 @@ class __$CounterStateCopyWithImpl<$Res> extends _$CounterStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object counter = freezed,
+    Object? counter = freezed,
   }) {
     return _then(_CounterState(
-      counter: counter == freezed ? _value.counter : counter as int,
+      counter: counter == freezed
+          ? _value.counter
+          : counter // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
-class _$_CounterState with DiagnosticableTreeMixin implements _CounterState {
-  const _$_CounterState({this.counter});
+
+class _$_CounterState extends _CounterState with DiagnosticableTreeMixin {
+  const _$_CounterState({required this.counter}) : super._();
 
   @override
   final int counter;
@@ -127,12 +136,14 @@ class _$_CounterState with DiagnosticableTreeMixin implements _CounterState {
       __$CounterStateCopyWithImpl<_CounterState>(this, _$identity);
 }
 
-abstract class _CounterState implements CounterState {
-  const factory _CounterState({int counter}) = _$_CounterState;
+abstract class _CounterState extends CounterState {
+  const factory _CounterState({required int counter}) = _$_CounterState;
+  const _CounterState._() : super._();
 
   @override
-  int get counter;
+  int get counter => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CounterStateCopyWith<_CounterState> get copyWith;
+  _$CounterStateCopyWith<_CounterState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
